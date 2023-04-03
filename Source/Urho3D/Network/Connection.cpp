@@ -430,6 +430,7 @@ void Connection::ProcessLoadScene(int msgID, MemoryBuffer& msg)
     }
 
     // Store the scene file name we need to eventually load
+    sceneLoaded_ = false;
     sceneFileName_ = msg.ReadString();
 
     // Clear previous pending latest data and package downloads if any

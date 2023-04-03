@@ -198,6 +198,9 @@ bool Scene::LoadXML(const XMLElement& source)
     if (Node::LoadXML(source))
     {
         FinishLoading(nullptr);
+        fileName_ = source.GetFile()->GetName();
+        checksum_ = File(context_, source.GetFile()->GetAbsoluteFileName()).GetChecksum();
+
         return true;
     }
     else
